@@ -3,34 +3,26 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  SidebarTrigger,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Settings, Timer, Clock, History } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export function AppSidebar() {
   const location = useLocation();
+
   return (
-    <Sidebar>
-      <SidebarHeader />
-      <SidebarContent>
+    <Sidebar collapsible="icon">
+      <SidebarHeader className="text-center">
+        <p className="text-2xl font-bold truncate">Pomodoro</p>
+      </SidebarHeader>
+      <SidebarContent className="mt-8">
         <SidebarGroup>
           <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton
-                tooltip="Configurações"
-                isActive={location.pathname === "/settings"}
-                asChild
-              >
-                <Link to="/settings" className="flex items-center gap-2 w-full">
-                  <Settings className="w-5 h-5" />
-                  <span>Configurações</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton
                 tooltip="Timer"
@@ -66,11 +58,25 @@ export function AppSidebar() {
                   <span>Histórico</span>
                 </Link>
               </SidebarMenuButton>
+              <SidebarMenuButton
+                tooltip="Configurações"
+                isActive={location.pathname === "/settings"}
+                asChild
+              >
+                <Link to="/settings" className="flex items-center gap-2 w-full">
+                  <Settings className="w-5 h-5" />
+                  <span>Configurações</span>
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter className="flex justify-center items-center p-2">
+        <div className="w-full flex justify-start">
+          <SidebarTrigger />
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 }

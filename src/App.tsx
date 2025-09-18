@@ -13,7 +13,6 @@ export default function App() {
       <SidebarProvider>
         <AppSidebar />
         <main>
-          <SidebarTrigger />
           <Routes>
             <Route path="/" element={<Navigate to="/timer" />} />
             <Route path="/settings" element={<Settings />} />
