@@ -1,11 +1,10 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/sideBarContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Settings from "@/pages/Settings";
 import Timer from "@/pages/Timer";
 import Clock from "@/pages/Clock";
 import History from "@/pages/History";
-import "./index.css";
 
 export default function App() {
   return (

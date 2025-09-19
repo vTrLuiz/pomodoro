@@ -1,3 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Gray scale colors */
+  --color-gray-100: #e6e9f0;
+  --color-gray-200: #cdd3e1;
+  --color-gray-300: #aab3cc;
+  --color-gray-400: #555f7d;
+  --color-gray-500: #454f6a;
+  --color-gray-600: #363d56;
+  --color-gray-700: #272f43;
+  --color-gray-800: #181f2e;
+  --color-gray-900: #0a0f1a;
+
+  /* Primary colors */
+  --color-primary: #0da170;
+  --color-primary-light: #4de7b7;
+  --color-primary-dark: #065f46;
+  --color-primary-foreground: #0a0f1a;
+
+  /* Secondary colors */
+  --color-secondary: #aab3cc;
+  --color-secondary-foreground: #0a0f1a;
+
+  /* Status colors */
+  --color-destructive: #991b1b;
+  --color-destructive-foreground: #e6e9f0;
+  --color-accent: #0ea5e9;
+  --color-accent-foreground: #0a0f1a;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+
+  /* Link colors */
+  --color-link: #10b981;
+  --color-link-hover: #0b8a60;
+
+  /* Background and foreground */
+  --color-background: #0a0f1a;
+  --color-foreground: #e6e9f0;
+  --color-muted: #aab3cc;
+  --color-disabled: #555f7d;
+  --color-text-disabled: #aab3cc;
+}
+
 @import "./styles/theme.css";
 
 :root {
@@ -20,7 +64,7 @@
   box-sizing: border-box;
   color-scheme: light dark;
   color: var(--text-default);
-  background-color: var(--gray-900);
+  background-color: var(--color-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,15 +73,15 @@
 
 a {
   font-weight: 500;
-  color: var(--link-color);
+  color: var(--color-link);
   text-decoration: inherit;
 }
 a:hover {
-  color: var(--link-hover);
+  color: var(--color-link-hover);
 }
 
 body {
-  background: var(--gray-900);
+  background: var(--color-background);
   color: var(--text-default);
   margin: 0;
 }
@@ -56,24 +100,22 @@ button {
   cursor: pointer;
 }
 button:hover {
-  border-color: var(--primary-light);
-  background-color: var(--primary-dark);
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--gray-900);
-    background-color: var(--gray-100);
+    color: var(--color-gray-900);
+    background-color: var(--color-gray-100);
   }
   a:hover {
-    color: var(--primary-dark);
+    color: var(--color-primary-dark);
   }
   button {
-    background-color: var(--primary-light);
+    background-color: var(--color-primary-light);
     color: var(--text-over-primary-light);
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 utilities are automatically included with @import "tailwindcss" */
